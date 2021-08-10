@@ -106,3 +106,60 @@ def concise_is_negative(number):
 q4.check()
 
 
+"""
+The boolean variables ketchup, mustard and onion represent whether a customer wants a particular topping on their hot dog. We want to implement a number of boolean functions that correspond to some yes-or-no questions about the customer's order. For example:
+
+"""
+def onionless(ketchup, mustard, onion):
+    """Return whether the customer doesn't want onions.
+    """
+    return not onion
+
+def wants_all_toppings(ketchup, mustard, onion):
+    """Return whether the customer wants "the works" (all 3 toppings)
+    """
+    return ketchup and mustard and onion
+    pass
+
+# Check your answer
+q5.a.check()
+
+"""For the next function, fill in the body to match the English description in the docstring."""
+
+def wants_plain_hotdog(ketchup, mustard, onion):
+    """Return whether the customer wants a plain hot dog with no toppings.
+    """
+    return not(ketchup or mustard or onion)
+    pass
+
+# Check your answer
+q5.b.check()
+
+
+""" You know what to do: for the next function, fill in the body to match the English description in the docstring. """
+
+def exactly_one_sauce(ketchup, mustard, onion):
+    """Return whether the customer wants either ketchup or mustard, but not both.
+    (You may be familiar with this operation under the name "exclusive or")
+    """
+    return (ketchup and not mustard) or (mustard and not ketchup)
+    pass
+
+# Check your answer
+q5.c.check()
+
+"""We’ve seen that calling bool() on an integer returns False if it’s equal to 0 and True otherwise. What happens if we call int() on a bool? Try it out in the console or a new code cell.
+
+Can you take advantage of this to write a succinct function that corresponds to the English sentence "does the customer want exactly one topping?"?
+
+In [20]:
+"""
+def should_hit(dealer_total, player_total, player_low_aces, player_high_aces):
+    """Return True if the player should hit (request another card) given the current game
+    state, or False if the player should stay.
+    When calculating a hand's total value, we count aces as "high" (with value 11) if doing so
+    doesn't bring the total above 21, otherwise we count them as low (with value 1). 
+    For example, if the player's hand is {A, A, A, 7}, we will count it as 11 + 1 + 1 + 7,
+    and therefore set player_total=20, player_low_aces=2, player_high_aces=1.
+    """
+    return False
